@@ -1,0 +1,14 @@
+syntax = "proto3";
+package deet42.iodinecoinfull.iodinecoinfull;
+
+import "gogoproto/gogo.proto";
+import "iodinecoinfull/params.proto";
+// this line is used by starport scaffolding # genesis/proto/import
+
+option go_package = "github.com/Deet42/iodinecoin-full/x/iodinecoinfull/types";
+
+// GenesisState defines the iodinecoinfull module's genesis state.
+message GenesisState {
+  Params params = 1 [(gogoproto.nullable) = false];
+  // this line is used by starport scaffolding # genesis/proto/state
+}
