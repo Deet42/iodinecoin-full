@@ -1,0 +1,51 @@
+syntax = "proto3";
+package deet42.iodinecoinfull.tokenfactory;
+
+import "tokenfactory/denom.proto";
+// this line is used by starport scaffolding # proto/tx/import
+
+option go_package = "github.com/Deet42/iodinecoin-full/x/tokenfactory/types";
+
+// Msg defines the Msg service.
+service Msg {
+      rpc CreateDenom(MsgCreateDenom) returns (MsgCreateDenomResponse);
+  rpc UpdateDenom(MsgUpdateDenom) returns (MsgUpdateDenomResponse);
+  rpc DeleteDenom(MsgDeleteDenom) returns (MsgDeleteDenomResponse);
+// this line is used by starport scaffolding # proto/tx/rpc
+}
+
+message MsgCreateDenom {
+  string owner = 1;
+  string denom = 2;
+
+  string description = 3;
+  string ticker = 4;
+  int32 precision = 5;
+  string url = 6;
+  int32 maxSupply = 7;
+  int32 supply = 8;
+  bool canChangeMaxSupply = 9;
+}
+message MsgCreateDenomResponse {}
+
+message MsgUpdateDenom {
+  string owner = 1;
+  string denom = 2;
+
+  string description = 3;
+  string ticker = 4;
+  int32 precision = 5;
+  string url = 6;
+  int32 maxSupply = 7;
+  int32 supply = 8;
+  bool canChangeMaxSupply = 9;
+}
+message MsgUpdateDenomResponse {}
+
+message MsgDeleteDenom {
+  string owner = 1;
+  string denom = 2;
+}
+message MsgDeleteDenomResponse {}
+
+// this line is used by starport scaffolding # proto/tx/message
